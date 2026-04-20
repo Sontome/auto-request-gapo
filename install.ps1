@@ -1,29 +1,28 @@
 $path = "C:\auto-request-gapo"
 
-# 1. Clone repo
-if (!(Test-Path $path)) {
-    git clone https://github.com/Sontome/auto-request-gapo.git $path
-} else {
-    Write-Host "Folder tồn tại rồi 😏"
-}
+# Tạo folder
+New-Item -ItemType Directory -Force -Path $path | Out-Null
+
+# Download zip repo
+$zip = "$env:TEMP\repo.zip"
+Invoke-WebRequest "https://github.com/Sontome/auto-request-gapo/archive/refs/heads/main.zip" -OutFile $zip
+
+# Giải nén
+Expand-Archive $zip -DestinationPath $env:TEMP -Force
+
+# Copy vào C:
+Copy-Item "$env:TEMP\auto-request-gapo-main\*" $path -Recurse -Force
 
 cd $path
 
-# 2. Copy link extensions cho user
-$extLink = "chrome://extensions/"
-Set-Clipboard $extLink
+Set-Clipboard "chrome://extensions/"
 
-# 3. Popup hướng dẫn
 Add-Type -AssemblyName PresentationFramework
-
 [System.Windows.MessageBox]::Show(
-"Đã cài xong auto-request-gapo 😎 Bấm OK để mở Chrome Extensions`n`n👉 Nhớ bật 'Developer mode' nha ",
+"Xong rồi .`nĐã copy chrome://extensions/",
 "Installer",
 "OK",
 "Information"
 )
 
-# 4. Mở Chrome Extensions
 Start-Process "chrome.exe" "chrome://extensions/"
-
-Write-Host "Xong hết rồi đại ca 😎"
