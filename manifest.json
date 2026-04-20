@@ -6,7 +6,7 @@
     "host_permissions": ["https://www.gapowork.vn/*"],
     "content_scripts": [
       {
-        "matches": ["https://www.gapowork.vn/approval/approver"],
+        "matches": ["https://www.gapowork.vn/*"],
         "js": ["utils.js", "popup-ui.js", "page.js", "editor.js", "content.js"],
         "css": ["style.css"],
         "run_at": "document_idle"
