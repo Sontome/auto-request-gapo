@@ -1,0 +1,96 @@
+#gapo-status-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999999;
+    background: #111;
+    color: #00ff88;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: Arial;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+#gapo-tool-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.15s ease-out;
+}
+
+#gapo-tool-overlay .box {
+    background: #ffffff;
+    padding: 26px 24px;   /* 🔥 tăng padding tổng */
+    border-radius: 18px;
+    width: 360px;
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.28);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px; /* 🔥 quan trọng: tạo khoảng cách giữa các phần */
+}
+
+/* button style */
+#gapo-tool-overlay button {
+    background: #28526e;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+
+    padding: 8px 10px;   /* 🔥 giảm từ 10-14 xuống */
+    font-size: 13px;     /* nhỏ gọn hơn */
+    font-weight: 600;
+
+    cursor: pointer;
+    width: 100%;
+
+    transition: all 0.2s ease;
+}
+
+#gapo-tool-overlay button:hover {
+    background: #1f4259;
+    transform: translateY(-1px);
+}
+
+#gapo-tool-overlay button:active {
+    transform: scale(0.98);
+}
+
+/* optional input style nếu có form */
+#gapo-tool-overlay input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.2s;
+}
+
+#gapo-tool-overlay input:focus {
+    border-color: #28526e;
+    box-shadow: 0 0 0 3px rgba(40, 82, 110, 0.15);
+}
+
+/* animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

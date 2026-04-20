@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Gapo Auto Tool",
+    "version": "2.0.0",
+    "permissions": ["scripting"],
+    "host_permissions": ["https://www.gapowork.vn/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://www.gapowork.vn/approval/approver"],
+        "js": ["utils.js", "popup-ui.js", "page.js", "editor.js", "content.js"],
+        "css": ["style.css"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
