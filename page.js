@@ -234,7 +234,7 @@ window.GapoPage = {
     },
     async addApprover() {
         const names = [
-            "trịnh xuân sơn"
+            "nguyễn thị thêu"
         ];
     
         // mở popup
