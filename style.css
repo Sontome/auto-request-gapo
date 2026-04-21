@@ -94,3 +94,207 @@
         opacity: 1;
     }
 }
+/* ===== Source modal (TC confirm) ===== */
+.gapo-tc-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(2px);
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.gapo-tc-modal {
+    width: 620px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12), 0 20px 48px rgba(15, 23, 42, 0.18);
+    font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.gapo-tc-modal__header {
+    padding: 16px 18px 12px;
+    border-bottom: 1px solid #eef2f7;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.gapo-tc-modal__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.gapo-tc-modal__subtitle {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.gapo-tc-modal__body {
+    padding: 14px 18px;
+    overflow: auto;
+    flex: 1;
+}
+
+.gapo-tc-list {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 10px;
+    background: #f8fafc;
+    min-height: 84px;
+}
+
+.gapo-tc-empty {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    font-size: 14px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.gapo-tc-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 8px;
+}
+
+.gapo-tc-row__left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.gapo-tc-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid #bfdbfe;
+}
+
+.gapo-tc-text {
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.gapo-tc-remove {
+    border: 1px solid #fecaca;
+    background: #fff1f2;
+    color: #be123c;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.gapo-tc-remove:hover {
+    background: #ffe4e6;
+}
+
+.gapo-tc-add-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.gapo-tc-input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+}
+.gapo-tc-input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.gapo-tc-note {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #64748b;
+}
+.gapo-tc-note strong {
+    color: #0f172a;
+}
+
+.gapo-tc-modal__footer {
+    padding: 12px 18px 16px;
+    border-top: 1px solid #eef2f7;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: #fff;
+}
+
+.gapo-btn {
+    height: 38px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.gapo-btn--add {
+    padding: 0 14px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #0f172a;
+}
+.gapo-btn--add:hover {
+    background: #f1f5f9;
+}
+
+.gapo-btn--ghost {
+    min-width: 90px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #334155;
+}
+.gapo-btn--ghost:hover {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.gapo-btn--primary {
+    min-width: 110px;
+    border: 1px solid #6c7293 ;
+    background: #6c7293 ;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+.gapo-btn--primary:hover {
+    background: #5c617c ;
+}
