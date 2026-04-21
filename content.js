@@ -170,13 +170,19 @@ function createSourceStartButton() {
         const tcList = extractTcListNotSettled();
 
         openTcConfirmModal(tcList, (finalTcString) => {
-            const ok = confirm(
-                `Xác nhận gửi dữ liệu?\n\n` +
-                `Tên: ${name || "(trống)"}\n` +
-                `CIF: ${cif || "(trống)"}\n` +
-                `TC: ${finalTcString || "(trống)"}`
-            );
-            if (!ok) return;
+            const tcValue = (finalTcString || "").trim();
+            // Chặn nếu không có TC
+            if (!tcValue) {
+                alert(" Vui lòng mở một hợp đồng cần tất toán trước khi xác nhận.");
+                return;
+            }
+            // const ok = confirm(
+            //     `Xác nhận gửi dữ liệu?\n\n` +
+            //     `Tên: ${name || "(trống)"}\n` +
+            //     `CIF: ${cif || "(trống)"}\n` +
+            //     `TC: ${finalTcString || "(trống)"}`
+            // );
+            // if (!ok) return;
 
             chrome.runtime.sendMessage(
                 {
