@@ -148,7 +148,7 @@ window.GapoPage = {
 
             this.setNativeValue(input, name);
             GapoUtils.log("Search: " + name);
-            await new Promise(r => setTimeout(r, 400));
+            await new Promise(r => setTimeout(r, 800));
             // đợi list update
             let item = await this.waitUntil(() => {
                 const nodes = [...document.querySelectorAll(
