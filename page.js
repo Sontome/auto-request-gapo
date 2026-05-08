@@ -140,15 +140,17 @@ window.GapoPage = {
                 10000
             );
             GapoUtils.log("Thấy ô tìm kiếm");
+            // chờ UI ổn định
+            await new Promise(r => setTimeout(r, 500));
             input.focus();
     
             // clear + set chuẩn React
-            this.setNativeValue(input, "");
+            // this.setNativeValue(input, "");
             
 
             this.setNativeValue(input, name);
             GapoUtils.log("Search: " + name);
-            await new Promise(r => setTimeout(r, 800));
+            await new Promise(r => setTimeout(r, 500));
             // đợi list update
             let item = await this.waitUntil(() => {
                 const nodes = [...document.querySelectorAll(
